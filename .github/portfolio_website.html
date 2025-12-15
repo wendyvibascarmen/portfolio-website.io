@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purple Portfolio</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animated-bg {
+      background: linear-gradient(-45deg, #6B21A8, #7C3AED, #A855F7, #C084FC);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+    
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .skill-bar {
+      transition: width 1.5s ease-out;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app-wrapper" class="animated-bg min-h-full w-full overflow-auto">
+   <div class="max-w-6xl mx-auto px-6 py-12"><!-- Header Section -->
+    <header class="text-center mb-20 fade-in-up" style="animation-delay: 0.1s;">
+     <div class="float-animation">
+      <h1 id="portfolio-name" class="text-6xl font-bold text-white mb-4">Alex Johnson</h1>
+      <p id="portfolio-tagline" class="text-2xl text-purple-100">Creative Developer &amp; Designer</p>
+     </div>
+    </header><!-- About Section -->
+    <section class="glass-effect rounded-3xl p-8 mb-12 fade-in-up" style="animation-delay: 0.2s;">
+     <h2 id="about-heading" class="text-4xl font-bold text-white mb-6">About Me</h2>
+     <p id="about-text" class="text-lg text-purple-100 leading-relaxed">I'm a passionate developer with a love for creating beautiful, functional web experiences. With expertise in modern technologies and a keen eye for design, I bring ideas to life through code.</p>
+    </section><!-- Skills Section -->
+    <section class="mb-12 fade-in-up" style="animation-delay: 0.3s;">
+     <h2 id="skills-heading" class="text-4xl font-bold text-white mb-8 text-center">Skills</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="glass-effect rounded-2xl p-6">
+       <div class="flex justify-between mb-2"><span class="text-white font-semibold">JavaScript</span> <span class="text-purple-200">90%</span>
+       </div>
+       <div class="bg-purple-900 rounded-full h-3">
+        <div class="skill-bar bg-gradient-to-r from-purple-400 to-pink-400 h-3 rounded-full" style="width: 0%;" data-width="90%"></div>
+       </div>
+      </div>
+      <div class="glass-effect rounded-2xl p-6">
+       <div class="flex justify-between mb-2"><span class="text-white font-semibold">HTML &amp; CSS</span> <span class="text-purple-200">95%</span>
+       </div>
+       <div class="bg-purple-900 rounded-full h-3">
+        <div class="skill-bar bg-gradient-to-r from-purple-400 to-pink-400 h-3 rounded-full" style="width: 0%;" data-width="95%"></div>
+       </div>
+      </div>
+      <div class="glass-effect rounded-2xl p-6">
+       <div class="flex justify-between mb-2"><span class="text-white font-semibold">React</span> <span class="text-purple-200">85%</span>
+       </div>
+       <div class="bg-purple-900 rounded-full h-3">
+        <div class="skill-bar bg-gradient-to-r from-purple-400 to-pink-400 h-3 rounded-full" style="width: 0%;" data-width="85%"></div>
+       </div>
+      </div>
+      <div class="glass-effect rounded-2xl p-6">
+       <div class="flex justify-between mb-2"><span class="text-white font-semibold">UI/UX Design</span> <span class="text-purple-200">80%</span>
+       </div>
+       <div class="bg-purple-900 rounded-full h-3">
+        <div class="skill-bar bg-gradient-to-r from-purple-400 to-pink-400 h-3 rounded-full" style="width: 0%;" data-width="80%"></div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Projects Section -->
+    <section class="mb-12 fade-in-up" style="animation-delay: 0.4s;">
+     <h2 id="projects-heading" class="text-4xl font-bold text-white mb-8 text-center">Featured Projects</h2>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="glass-effect rounded-2xl p-6 hover:scale-105 transition-transform duration-300 cursor-pointer">
+       <div class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl h-40 mb-4 flex items-center justify-center"><span class="text-6xl">🎨</span>
+       </div>
+       <h3 class="text-xl font-bold text-white mb-2">Design System</h3>
+       <p class="text-purple-100">A comprehensive UI component library</p>
+      </div>
+      <div class="glass-effect rounded-2xl p-6 hover:scale-105 transition-transform duration-300 cursor-pointer">
+       <div class="bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl h-40 mb-4 flex items-center justify-center"><span class="text-6xl">📱</span>
+       </div>
+       <h3 class="text-xl font-bold text-white mb-2">Mobile App</h3>
+       <p class="text-purple-100">Cross-platform application with React Native</p>
+      </div>
+      <div class="glass-effect rounded-2xl p-6 hover:scale-105 transition-transform duration-300 cursor-pointer">
+       <div class="bg-gradient-to-br from-indigo-600 to-blue-600 rounded-xl h-40 mb-4 flex items-center justify-center"><span class="text-6xl">🚀</span>
+       </div>
+       <h3 class="text-xl font-bold text-white mb-2">SaaS Platform</h3>
+       <p class="text-purple-100">Full-stack web application for businesses</p>
+      </div>
+     </div>
+    </section><!-- Contact Section -->
+    <section class="glass-effect rounded-3xl p-8 text-center fade-in-up" style="animation-delay: 0.5s;">
+     <h2 id="contact-heading" class="text-4xl font-bold text-white mb-4">Let's Connect</h2>
+     <p id="contact-text" class="text-lg text-purple-100 mb-6">Have a project in mind? I'd love to hear from you!</p><button class="bg-white text-purple-700 px-8 py-3 rounded-full font-semibold hover:bg-purple-100 transition-colors duration-300 shadow-lg hover:shadow-xl"> Get In Touch </button>
+    </section>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      portfolio_name: "Wendy Carmen",
+      portfolio_tagline: "Creative Developer & Designer",
+      about_heading: "About Me",
+      about_text: "I'm a passionate developer with a love for creating beautiful, functional web experiences. With expertise in modern technologies and a keen eye for design, I bring ideas to life through code.",
+      skills_heading: "Skills",
+      projects_heading: "Featured Projects",
+      contact_heading: "Let's Connect",
+      contact_text: "Have a project in mind? I'd love to hear from you!",
+      background_color: "#6B21A8",
+      surface_color: "#7C3AED",
+      text_color: "#FFFFFF",
+      primary_action_color: "#FFFFFF",
+      secondary_action_color: "#E9D5FF",
+      font_family: "system-ui",
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+      const baseSize = config.font_size || defaultConfig.font_size;
+
+      document.getElementById('portfolio-name').textContent = config.portfolio_name || defaultConfig.portfolio_name;
+      document.getElementById('portfolio-name').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('portfolio-name').style.fontSize = `${baseSize * 3.75}px`;
+
+      document.getElementById('portfolio-tagline').textContent = config.portfolio_tagline || defaultConfig.portfolio_tagline;
+      document.getElementById('portfolio-tagline').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('portfolio-tagline').style.fontSize = `${baseSize * 1.5}px`;
+
+      document.getElementById('about-heading').textContent = config.about_heading || defaultConfig.about_heading;
+      document.getElementById('about-heading').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('about-heading').style.fontSize = `${baseSize * 2.5}px`;
+
+      document.getElementById('about-text').textContent = config.about_text || defaultConfig.about_text;
+      document.getElementById('about-text').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('about-text').style.fontSize = `${baseSize * 1.125}px`;
+
+      document.getElementById('skills-heading').textContent = config.skills_heading || defaultConfig.skills_heading;
+      document.getElementById('skills-heading').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('skills-heading').style.fontSize = `${baseSize * 2.5}px`;
+
+      document.getElementById('projects-heading').textContent = config.projects_heading || defaultConfig.projects_heading;
+      document.getElementById('projects-heading').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('projects-heading').style.fontSize = `${baseSize * 2.5}px`;
+
+      document.getElementById('contact-heading').textContent = config.contact_heading || defaultConfig.contact_heading;
+      document.getElementById('contact-heading').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('contact-heading').style.fontSize = `${baseSize * 2.5}px`;
+
+      document.getElementById('contact-text').textContent = config.contact_text || defaultConfig.contact_text;
+      document.getElementById('contact-text').style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.getElementById('contact-text').style.fontSize = `${baseSize * 1.125}px`;
+
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+
+      document.getElementById('app-wrapper').style.background = `linear-gradient(-45deg, ${backgroundColor}, ${surfaceColor}, #A855F7, #C084FC)`;
+      
+      const allText = document.querySelectorAll('h1, h2, h3, p, span');
+      allText.forEach(el => {
+        el.style.color = textColor;
+      });
+
+      const button = document.querySelector('button');
+      button.style.backgroundColor = primaryActionColor;
+      button.style.color = backgroundColor;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            if (window.elementSdk) {
+              window.elementSdk.config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            if (window.elementSdk) {
+              window.elementSdk.config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["portfolio_name", config.portfolio_name || defaultConfig.portfolio_name],
+        ["portfolio_tagline", config.portfolio_tagline || defaultConfig.portfolio_tagline],
+        ["about_heading", config.about_heading || defaultConfig.about_heading],
+        ["about_text", config.about_text || defaultConfig.about_text],
+        ["skills_heading", config.skills_heading || defaultConfig.skills_heading],
+        ["projects_heading", config.projects_heading || defaultConfig.projects_heading],
+        ["contact_heading", config.contact_heading || defaultConfig.contact_heading],
+        ["contact_text", config.contact_text || defaultConfig.contact_text]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const skillBars = document.querySelectorAll('.skill-bar');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const targetWidth = entry.target.getAttribute('data-width');
+            entry.target.style.width = targetWidth;
+          }
+        });
+      }, { threshold: 0.5 });
+
+      skillBars.forEach(bar => observer.observe(bar));
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ad4ae0832e8bc43',t:'MTc2NTYyMDcxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
